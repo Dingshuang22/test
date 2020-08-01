@@ -7,7 +7,6 @@ import Vue from 'vue';
 //  import getters from './getters';
  Vue.use(Vuex);
  import index from './modules/index'
- import layout from './modules/layout'
 //  console.log("***")
 //  console.log(index)
 // console.log(getters)
@@ -28,7 +27,6 @@ import Vue from 'vue';
 const store = new Vuex.Store({
     modules:{
     index,
-    layout
 }
 })
 

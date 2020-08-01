@@ -38,7 +38,8 @@ const en = {
         closeAll:'Close All',
         excel:'Excel ImportAndExport',
         uploadExcel:'Upload Excel',
-        downLoadExcel:'Download Excel'
+        downLoadExcel:'Download Excel',
+        permissionButton:'Permission Button',
 
     }
 }

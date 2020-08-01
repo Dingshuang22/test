@@ -9,7 +9,10 @@ import { MessageBox, Message } from 'element-ui'
 
 let state = {
   num: 1,
-  buttons: 'ADD,LIST,DELETE,维修养护',
+  /**
+  * 模仿按钮权限  "查询，重置，导出，审核 拒绝" v-has
+  */
+  buttons: "查询，重置，导出，审核",
   userInfoPagination: { page: 1, size: 8, total: 21 },
   userInfo: [
     {

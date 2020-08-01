@@ -38,7 +38,8 @@ const zh = {
         closeAll:'关闭所有',
         excel:'表格导入导出',
         uploadExcel:'上传 Excel',
-        downLoadExcel:'下载 Excel'
+        downLoadExcel:'下载 Excel',
+        permissionButton:'权限按钮'
     }
 }
 export default zh

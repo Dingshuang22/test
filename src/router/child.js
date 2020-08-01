@@ -115,5 +115,11 @@ export const routes = [
         name:'excel',
         component:()=>import('@/views/Excel.vue'),
         meta:{title:'i18n.excel',icon:'el-icon-s-data'}
+      },
+      {
+        path:'permissionbutton',
+        name:'permissionbutton',
+        component:()=>import('@/views/PermissionButton.vue'),
+        meta:{title:'i18n.permissionButton',icon:'el-icon-lock'}
       }
   ]

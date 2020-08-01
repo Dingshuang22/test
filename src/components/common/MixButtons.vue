@@ -6,13 +6,18 @@
 -->
 <template>
   <section class="filter-params-e3s">
-    <el-button v-for="(item, i) in buttons" 
+    <el-button 
+    v-for="(item, i) in buttons" 
     :key="`name_${i}`" 
     :disabled="item.disabled" 
     @click="item.event" 
     :type="item.type || 'default'"
     :icon="item.icon" 
-    size="small">{{item.label}}</el-button>
+    size="small"
+    v-has="item.label"
+    >
+      {{item.label}}
+    </el-button>
   </section>
 </template>
 <script>
@@ -41,7 +46,7 @@ export default {
             disabled:false,
             type:'success',
             event:()=>{
-                alert('重置事件')
+                alert('导出事件')
             }
         },
         {
