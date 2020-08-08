@@ -13,8 +13,8 @@
     <div>
       <h2>{{$t('i18n.excel')}}</h2>
     </div>
-    <h2>dds</h2>
-    <h2>dds2</h2>
+    <h2>ds</h2>
+    
   </div>
 </template>
 
