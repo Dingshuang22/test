@@ -61,7 +61,12 @@ Vue.use(infiniteScroll);
 * 1.不存在跳去登录
 * 2.存在则作权限或其他操作
 */
+/**
+ *i18n在js中使用 i18n.t('')
+ */
 router.beforeEach((to, from, next) => {
+    // console.log(to.meta.title)
+    // console.log(i18n.t('i18n.excel')) 
     document.title = `${i18n.t(to.meta.title)} | Manage-System`;
     const role = JSON.parse(sessionStorage.getItem('userInfo')) && JSON.parse(sessionStorage.getItem('userInfo')).username || null
     if(to.meta.title !== from.meta.title){

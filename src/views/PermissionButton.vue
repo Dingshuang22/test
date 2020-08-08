@@ -10,6 +10,9 @@
     <div>
       <MixButton :dynamicButtons="dynamicButtons" />
     </div>
+    <div>
+      <h2>{{$t('i18n.excel')}}</h2>
+    </div>
   </div>
 </template>
 
@@ -19,6 +22,7 @@ export default {
   name: "permissionbutton",
   data() {
     return {
+      type:'',
       dynamicButtons: [
         {
           label: "查询",
@@ -62,6 +66,9 @@ export default {
         },
       ],
     };
+  },
+  mounted(){
+   console.log(this.$t('i18n.excel'))
   },
   components: {
     MixButton,

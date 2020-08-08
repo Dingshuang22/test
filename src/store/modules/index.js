@@ -4,7 +4,6 @@
 
 var _ = require('lodash');
 import { types } from './types/index.js';
-
 import { MessageBox, Message } from 'element-ui'
 
 let state = {
