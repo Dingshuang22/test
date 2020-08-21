@@ -23,12 +23,12 @@
 
 <script>
 export default {
-    name:'dragdialog',
-    data(){
-        return {
-            visible: false
-        }
+  name: 'dragdialog',
+  data () {
+    return {
+      visible: false
     }
+  }
 }
 </script>
 

@@ -29,37 +29,37 @@
 
 <script>
 export default {
-    name:'login',
-    data: function() {
-        return {
-            param: {
-                username: 'admin',
-                password: '123123',
-                meta:''
-            },
-            rules: {
-                username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
-                password: [{ required: true, message: '请输入密码', trigger: 'blur' }],
-            },
-        };
-    },
-    methods: {
-        submitForm() {
-            this.$refs.login.validate(valid => {
-                if (valid) {
-                    this.$message.success('登录成功');
-                    // localStorage.setItem('ms_username', this.param.username);
-                    let param = JSON.stringify(this.param);
-                    sessionStorage.setItem('userInfo',param)
-                    this.$router.push({name:'dashboard'});
-                } else {
-                    this.$message.error('请输入账号和密码');
-                    return false;
-                }
-            });
-        },
-    },
-};
+  name: 'login',
+  data: function () {
+    return {
+      param: {
+        username: 'admin',
+        password: '123123',
+        meta: ''
+      },
+      rules: {
+        username: [{ required: true, message: '请输入用户名', trigger: 'blur' }],
+        password: [{ required: true, message: '请输入密码', trigger: 'blur' }]
+      }
+    }
+  },
+  methods: {
+    submitForm () {
+      this.$refs.login.validate(valid => {
+        if (valid) {
+          this.$message.success('登录成功')
+          // localStorage.setItem('ms_username', this.param.username);
+          let param = JSON.stringify(this.param)
+          sessionStorage.setItem('userInfo', param)
+          this.$router.push({name: 'dashboard'})
+        } else {
+          this.$message.error('请输入账号和密码')
+          return false
+        }
+      })
+    }
+  }
+}
 </script>
 
 <style scoped>

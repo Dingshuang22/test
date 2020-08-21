@@ -13,15 +13,14 @@
 
 <script>
 export default {
-    
+
   methods: {
-      goBack(){
-          this.$router.go(-1);
-      }
+    goBack () {
+      this.$router.go(-1)
+    }
   }
 }
 </script>
-
 
 <style scoped>
     .error-page{

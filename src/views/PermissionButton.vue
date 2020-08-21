@@ -17,63 +17,63 @@
 </template>
 
 <script>
-import MixButton from "@/components/common/MixButtons.vue";
+import MixButton from '@/components/common/MixButtons.vue'
 export default {
-  name: "permissionbutton",
-  data() {
+  name: 'permissionbutton',
+  data () {
     return {
-      type:'',
+      type: '',
       dynamicButtons: [
         {
-          label: "查询",
+          label: '查询',
           disabled: false,
-          type: "warning",
+          type: 'warning',
           event: () => {
-            alert("查询事件");
-          },
+            alert('查询事件')
+          }
         },
         {
-          label: "重置",
+          label: '重置',
           disabled: false,
-          type: "info",
+          type: 'info',
           event: () => {
-            alert("重置事件");
-          },
+            alert('重置事件')
+          }
         },
         {
-          label: "导出",
+          label: '导出',
           disabled: false,
-          type: "success",
+          type: 'success',
           event: () => {
-            alert("导出事件");
-          },
+            alert('导出事件')
+          }
         },
         {
-          label: "审核",
+          label: '审核',
           disabled: false,
-          type: "primary",
+          type: 'primary',
           event: () => {
-            alert("审核事件");
-          },
+            alert('审核事件')
+          }
         },
         {
-          label: "拒绝",
+          label: '拒绝',
           disabled: false,
-          type: "danger",
+          type: 'danger',
           event: () => {
-            alert("拒绝事件");
-          },
-        },
-      ],
-    };
+            alert('拒绝事件')
+          }
+        }
+      ]
+    }
   },
-  mounted(){
-   console.log(this.$t('i18n.excel'))
+  mounted () {
+    console.log(this.$t('i18n.excel'))
   },
   components: {
-    MixButton,
-  },
-};
+    MixButton
+  }
+}
 </script>
 
 <style>

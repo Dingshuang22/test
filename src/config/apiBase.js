@@ -2,6 +2,5 @@
  * api基路径
  */
 export const apiBase = {
-    baseUrl:'http://dev-mqtt.ait.red/'
+  baseUrl: 'http://dev-mqtt.ait.red/'
 }
-

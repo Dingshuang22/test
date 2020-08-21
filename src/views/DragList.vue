@@ -48,71 +48,71 @@
 </template>
 
 <script>
-    import draggable from 'vuedraggable'
-    export default {
-        name: 'draglist',
-        data() {
-            return {
-                dragOptions:{
-                    animation: 120,
-                    scroll: true,
-                    group: 'sortlist',
-                    ghostClass: 'ghost-style'
-                },
-                todo: [
-                    {
-                        id: 1,
-                        content: '开发图表组件'
-                    },
-                    {
-                        id: 2,
-                        content: '开发拖拽组件'
-                    },
-                    {
-                        id: 3,
-                        content: '开发权限测试组件'
-                    }
-                ],
-                doing: [
-                    {
-                        id: 1,
-                        content: '开发登录注册页面'
-                    },
-                    {
-                        id: 2,
-                        content: '开发头部组件'
-                    },
-                    {
-                        id: 3,
-                        content: '开发表格相关组件'
-                    },
-                    {
-                        id: 4,
-                        content: '开发表单相关组件'
-                    }
-                ],
-                done:[
-                    {
-                        id: 1,
-                        content: '初始化项目，生成工程目录，完成相关配置'
-                    },
-                    {
-                        id: 2,
-                        content: '开发项目整体框架'
-                    }
-                ]
-            }
+import draggable from 'vuedraggable'
+export default {
+  name: 'draglist',
+  data () {
+    return {
+      dragOptions: {
+        animation: 120,
+        scroll: true,
+        group: 'sortlist',
+        ghostClass: 'ghost-style'
+      },
+      todo: [
+        {
+          id: 1,
+          content: '开发图表组件'
         },
-        components:{
-            draggable
+        {
+          id: 2,
+          content: '开发拖拽组件'
         },
-        methods: {
-            removeHandle(event){
-                console.log(event);
-                this.$message.success(`从 ${event.from.id} 移动到 ${event.to.id} `);
-            }
+        {
+          id: 3,
+          content: '开发权限测试组件'
         }
+      ],
+      doing: [
+        {
+          id: 1,
+          content: '开发登录注册页面'
+        },
+        {
+          id: 2,
+          content: '开发头部组件'
+        },
+        {
+          id: 3,
+          content: '开发表格相关组件'
+        },
+        {
+          id: 4,
+          content: '开发表单相关组件'
+        }
+      ],
+      done: [
+        {
+          id: 1,
+          content: '初始化项目，生成工程目录，完成相关配置'
+        },
+        {
+          id: 2,
+          content: '开发项目整体框架'
+        }
+      ]
     }
+  },
+  components: {
+    draggable
+  },
+  methods: {
+    removeHandle (event) {
+      console.log(event)
+      this.$message.success(`从 ${event.from.id} 移动到 ${event.to.id} `)
+    }
+  }
+}
 
 </script>
 

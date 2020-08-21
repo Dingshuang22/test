@@ -3,23 +3,20 @@
  */
 import _ from 'lodash'
 import { routes } from './child'
-// console.log(routes)
-var routesList = [];
-_(routes).forEach(function(val){
-  if(!val.children){
-    routesList.push(val);
-  }else{
-    _(val.children).forEach(function(value){
-      // 二级菜单添加
-      if(!value.children){
+var routesList = []
+_(routes).forEach(function (val) {
+  if (!val.children) {
+    routesList.push(val)
+  } else {
+    _(val.children).forEach(function (value) {
+      if (!value.children) { // 二级菜单添加
         routesList.push(value)
-      }else{
-        // 三级菜单添加
-        _(value.children).forEach(function(v){
+      } else { // 三级菜单添加
+        _(value.children).forEach(function (v) {
           routesList.push(v)
         })
       }
-  })
+    })
   }
 })
 export { routesList }

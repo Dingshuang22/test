@@ -14,12 +14,12 @@
 </template>
 
 <script>
-    export default {
-        name:'permission',
-        data: function(){
-            return {}
-        }
-    }
+export default {
+  name: 'permission',
+  data: function () {
+    return {}
+  }
+}
 </script>
 
 <style scoped>

@@ -6,13 +6,13 @@
 -->
 <template>
   <section class="filter-params-e3s">
-    <el-button 
-    v-for="(item, i) in buttons" 
-    :key="`name_${i}`" 
-    :disabled="item.disabled" 
-    @click="item.event" 
+    <el-button
+    v-for="(item, i) in buttons"
+    :key="`name_${i}`"
+    :disabled="item.disabled"
+    @click="item.event"
     :type="item.type || 'default'"
-    :icon="item.icon" 
+    :icon="item.icon"
     size="small"
     v-has="item.label"
     >
@@ -24,67 +24,68 @@
 export default {
   props: {
     // 创建表单的参数
-    dynamicButtons: { type: Array, default: () => [
+    dynamicButtons: { type: Array,
+      default: () => [
         {
-            label:'查询',
-            disabled:false,
-            type:'warning',
-            event:()=>{
-                alert('查询事件')
-            }
+          label: '查询',
+          disabled: false,
+          type: 'warning',
+          event: () => {
+            alert('查询事件')
+          }
         },
         {
-            label:'重置',
-            disabled:false,
-            type:'info',
-            event:()=>{
-                alert('重置事件')
-            }
+          label: '重置',
+          disabled: false,
+          type: 'info',
+          event: () => {
+            alert('重置事件')
+          }
         },
         {
-            label:'导出',
-            disabled:false,
-            type:'success',
-            event:()=>{
-                alert('导出事件')
-            }
+          label: '导出',
+          disabled: false,
+          type: 'success',
+          event: () => {
+            alert('导出事件')
+          }
         },
         {
-            label:'审核',
-            disabled:false,
-            type:'primary',
-            event:()=>{
-                alert('审核事件')
-            }
+          label: '审核',
+          disabled: false,
+          type: 'primary',
+          event: () => {
+            alert('审核事件')
+          }
         },
         {
-            label:'拒绝',
-            disabled:false,
-            type:'danger',
-            event:()=>{
-                alert('拒绝事件')
-            }
+          label: '拒绝',
+          disabled: false,
+          type: 'danger',
+          event: () => {
+            alert('拒绝事件')
+          }
         }
 
-    ] },
+      ] },
     // 组件名
     name: { type: String, default: '' }
   },
-  data() {
+  data () {
     return {
       // 表单列
       buttons: this.dynamicButtons
-    };
+    }
   },
-  created() {
-    //设置button的图标
-    this.setIcon();
+  created () {
+    // 设置button的图标
+    this.setIcon()
   },
   methods: {
-    setIcon(){
+    setIcon () {
       const that = this
-      this.buttons.map(function(item, i){
-        switch(item.label){
+      this.buttons.map(function (item, i) {
+        switch (item.label) {
           case '查询':
             item.icon = 'el-icon-search'
             break
@@ -104,5 +105,5 @@ export default {
       })
     }
   }
-};
+}
 </script>

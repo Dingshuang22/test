@@ -2,7 +2,7 @@
     <section class="main">
         <div class="crumbs">
             <el-breadcrumb separator="/">
-                <el-breadcrumb-item><i class="el-icon-picture-outline-round"></i> 
+                <el-breadcrumb-item><i class="el-icon-picture-outline-round"></i>
                     {{$t('i18n.breadcrumb')}}
                 </el-breadcrumb-item>
             </el-breadcrumb>
@@ -28,22 +28,22 @@
 
 <script>
 export default {
-    /**
+  /**
      * 国际化 i18n 一定要注意name 堆栈问题  最好不写 写的话一定要匹配routes
      */
-    name:'vueI18n',
-    data(){
-        return {
-        }
-    },
-    mounted(){
-        
-    },
-    methods:{
-        changeLanguage(){
-            this.$i18n.locale = this.$i18n.locale ==='zh'?'en':'zh'
-        }
+  name: 'vueI18n',
+  data () {
+    return {
     }
+  },
+  mounted () {
+
+  },
+  methods: {
+    changeLanguage () {
+      this.$i18n.locale = this.$i18n.locale === 'zh' ? 'en' : 'zh'
+    }
+  }
 }
 </script>
 

@@ -30,58 +30,58 @@
 
 <script>
 // 引入上传下载方法
-import { importsExcel, exportExcel } from "@/func/excel.js";
+import { importsExcel, exportExcel } from '@/func/excel.js'
 export default {
-  name: "excel",
-  data() {
+  name: 'excel',
+  data () {
     return {
-      excelList: [],
-    };
+      excelList: []
+    }
   },
-  mounted() {},
+  mounted () {},
   methods: {
     //   upload
-    uploadExcel(e) {
-      var file = e.target.files; // (利用console.log输出看file文件对象)
+    uploadExcel (e) {
+      var file = e.target.files // (利用console.log输出看file文件对象)
       //   console.log(file);
       importsExcel(e).then(
         (data) => {
         //   console.log(data);
           //   actionList(data);
-          this.excelList = data;
+          this.excelList = data
         },
         function (data) {
         //   console.log(data);
         }
-      );
+      )
     },
     //   download
-    exportExcelList() {
+    exportExcelList () {
       //   设置好需要导出的数据（表头  内容  表名称） titel key 必要
       const header = [
         {
-          title: "编号",
-          dataIndex: "编号",
-          key: "编号",
-          className: "text-monospace",
+          title: '编号',
+          dataIndex: '编号',
+          key: '编号',
+          className: 'text-monospace'
         },
         {
-          title: "用户名称",
-          dataIndex: "用户名称",
-          key: "用户名称",
+          title: '用户名称',
+          dataIndex: '用户名称',
+          key: '用户名称'
         },
         {
-          title: "用户年龄", //
+          title: '用户年龄', //
           // dataIndex: '用户年龄',
-          key: "用户年龄", //value
-        },
-      ];
+          key: '用户年龄' // value
+        }
+      ]
       // 内容
-      const excelList = this.excelList;
-      exportExcel(header, excelList, "学生信息.xlsx");
-    },
-  },
-};
+      const excelList = this.excelList
+      exportExcel(header, excelList, '学生信息.xlsx')
+    }
+  }
+}
 </script>
 
 <style lang="scss" scoped>

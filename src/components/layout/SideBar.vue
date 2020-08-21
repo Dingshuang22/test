@@ -55,30 +55,30 @@
 </template>
 
 <script>
-import {bus} from '@/export';
+import {bus} from '@/export'
 import { routes } from '@/router/child'
 export default {
-    name:'SideBar',
-    data() {
-        return {
-            collapse: false,
-            items: routes
-     
-        }
-    },
-    computed: {
-        onRoutes() {
-            return this.$route.path.replace('/', '');
-        }
-    },
-    created() {
-        // 通过 Event Bus 进行组件间通信，来折叠侧边栏
-        bus.$on('collapse', msg => {
-            this.collapse = msg;
-            bus.$emit('collapse-content', msg);
-        });
+  name: 'SideBar',
+  data () {
+    return {
+      collapse: false,
+      items: routes
+
     }
-};
+  },
+  computed: {
+    onRoutes () {
+      return this.$route.path.replace('/', '')
+    }
+  },
+  created () {
+    // 通过 Event Bus 进行组件间通信，来折叠侧边栏
+    bus.$on('collapse', msg => {
+      this.collapse = msg
+      bus.$emit('collapse-content', msg)
+    })
+  }
+}
 </script>
 
 <style scoped>

@@ -3,37 +3,37 @@
 </template>
 <script>
 export default {
-  name: "Delete",
+  name: 'Delete',
   props: {
     Delete: {
       params: Object,
       url: String
     }
   },
-  data() {
+  data () {
     return {
       params: this.Delete.params,
       url: this.Delete.url
-    };
+    }
   },
-  mounted: function() {
-    this.getData();
+  mounted: function () {
+    this.getData()
   },
   methods: {
-    del: function() {
-      let that = this;
+    del: function () {
+      let that = this
       this.axios
         .get(that.url, {
           params: that.params
         })
-        .then(function(response) {
-          that.options = response.data;
-          //console.log(response.data)
+        .then(function (response) {
+          that.options = response.data
+          // console.log(response.data)
         })
-        .catch(function(error) {
-          console.log(error);
-        });
+        .catch(function (error) {
+          console.log(error)
+        })
     }
   }
-};
+}
 </script>

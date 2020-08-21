@@ -2,16 +2,16 @@
  * vuex状态管理
  */
 
-import Vue from 'vue';
- import Vuex from 'vuex';
+import Vue from 'vue'
+import Vuex from 'vuex'
+import index from './modules/index'
 //  import getters from './getters';
- Vue.use(Vuex);
- import index from './modules/index'
+Vue.use(Vuex)
 //  console.log("***")
 //  console.log(index)
 // console.log(getters)
 
- // https://webpack.js.org/guides/dependency-management/#requirecontext
+// https://webpack.js.org/guides/dependency-management/#requirecontext
 // const modulesFiles = require.context('./modules', true, /\.js$/)
 
 // // you do not need `import app from './modules/app'`
@@ -25,9 +25,9 @@ import Vue from 'vue';
 // }, {})
 
 const store = new Vuex.Store({
-    modules:{
-    index,
-}
+  modules: {
+    index
+  }
 })
 
 export {store}

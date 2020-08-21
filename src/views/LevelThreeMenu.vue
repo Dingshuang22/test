@@ -4,7 +4,7 @@
 
 <script>
 export default {
-    name:'levelthreemenu'
+  name: 'levelthreemenu'
 }
 </script>
 

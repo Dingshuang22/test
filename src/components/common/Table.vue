@@ -3,7 +3,7 @@
         <div class="crumbs">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
-                    <i class="el-icon-lx-cascades"></i> 
+                    <i class="el-icon-lx-cascades"></i>
                     {{ $t("i18n.baseTable") }}
                 </el-breadcrumb-item>
             </el-breadcrumb>
@@ -105,125 +105,124 @@
 <script>
 import {getUserInfo} from '@/api/index.js'
 export default {
-    name: 'basetable',
-    data() {
-        return {
-            query: {
-                address: '',
-                name: '',
-                pageIndex: 1,
-                pageSize: 4
-            },
-            tableData: [
-    {
-        "address":"广东省东莞市长安镇",
-        "date":"2019-11-1",
-        "id":1,
-        "money":123,
-        "name":"张三",
-        "state":"成功",
-        "thumb":"https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg"
-    },
-    {
-        "address": "广东省广州市白云区",
-        "date": "2019-10-11",
-        "id": 2,
-        "money": 456,
-        "name": "李四",
-        "state": "成功",
-        "thumb": "https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg"
-    },
-    {
-        "address": "湖南省长沙市",
-        "date": "2019-11-11",
-        "id": 3,
-        "money": 789,
-        "name": "王五",
-        "state": "失败",
-        "thumb": "https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg"
-    },
-    {
-        "address": "福建省厦门市鼓浪屿",
-        "date": "2019-10-20",
-        "id": 4,
-        "money": 1011,
-        "name": "赵六",
-        "state": "成功",
-        "thumb": "https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg"
-    }
-],
-            multipleSelection: [],
-            delList: [],
-            editVisible: false,
-            pageTotal: 15,
-            form: {},
-            idx: -1,
-            id: -1
-        };
-    },
-    created() {
-       this.getData();
-    },
-    mounted(){
-        
-    },
-    methods: {
-        // 获取 easy-mock 的模拟数据
-        getData(){
-            
-            
+  name: 'basetable',
+  data () {
+    return {
+      query: {
+        address: '',
+        name: '',
+        pageIndex: 1,
+        pageSize: 4
+      },
+      tableData: [
+        {
+          'address': '广东省东莞市长安镇',
+          'date': '2019-11-1',
+          'id': 1,
+          'money': 123,
+          'name': '张三',
+          'state': '成功',
+          'thumb': 'https://fuss10.elemecdn.com/9/bb/e27858e973f5d7d3904835f46abbdjpeg.jpeg'
         },
-
-        // 触发搜索按钮
-        handleSearch() {
-            this.$set(this.query, 'pageIndex', 1);
-            this.getData();
+        {
+          'address': '广东省广州市白云区',
+          'date': '2019-10-11',
+          'id': 2,
+          'money': 456,
+          'name': '李四',
+          'state': '成功',
+          'thumb': 'https://fuss10.elemecdn.com/e/5d/4a731a90594a4af544c0c25941171jpeg.jpeg'
         },
-        // 删除操作
-        handleDelete(index, row) {
-            // 二次确认删除
-            this.$confirm('确定要删除吗？', '提示', {
-                type: 'warning'
-            })
-                .then(() => {
-                    this.$message.success('删除成功');
-                    this.tableData.splice(index, 1);
-                })
-                .catch(() => {});
+        {
+          'address': '湖南省长沙市',
+          'date': '2019-11-11',
+          'id': 3,
+          'money': 789,
+          'name': '王五',
+          'state': '失败',
+          'thumb': 'https://cube.elemecdn.com/6/94/4d3ea53c084bad6931a56d5158a48jpeg.jpeg'
         },
-        // 多选操作
-        handleSelectionChange(val) {
-            this.multipleSelection = val;
-        },
-        delAllSelection() {
-            const length = this.multipleSelection.length;
-            let str = '';
-            this.delList = this.delList.concat(this.multipleSelection);
-            for (let i = 0; i < length; i++) {
-                str += this.multipleSelection[i].name + ' ';
-            }
-            this.$message.error(`删除了${str}`);
-            this.multipleSelection = [];
-        },
-        // 编辑操作
-        handleEdit(index, row) {
-            this.idx = index;
-            this.form = row;
-            this.editVisible = true;
-        },
-        // 保存编辑
-        saveEdit() {
-            this.editVisible = false;
-            this.$message.success(`修改第 ${this.idx + 1} 行成功`);
-            this.$set(this.tableData, this.idx, this.form);
-        },
-        // 分页导航
-        handlePageChange(val) {
-            this.$set(this.query, 'pageIndex', val);
-            this.getData();
+        {
+          'address': '福建省厦门市鼓浪屿',
+          'date': '2019-10-20',
+          'id': 4,
+          'money': 1011,
+          'name': '赵六',
+          'state': '成功',
+          'thumb': 'https://fuss10.elemecdn.com/a/3f/3302e58f9a181d2509f3dc0fa68b0jpeg.jpeg'
         }
+      ],
+      multipleSelection: [],
+      delList: [],
+      editVisible: false,
+      pageTotal: 15,
+      form: {},
+      idx: -1,
+      id: -1
     }
-};
+  },
+  created () {
+    this.getData()
+  },
+  mounted () {
+
+  },
+  methods: {
+    // 获取 easy-mock 的模拟数据
+    getData () {
+
+    },
+
+    // 触发搜索按钮
+    handleSearch () {
+      this.$set(this.query, 'pageIndex', 1)
+      this.getData()
+    },
+    // 删除操作
+    handleDelete (index, row) {
+      // 二次确认删除
+      this.$confirm('确定要删除吗？', '提示', {
+        type: 'warning'
+      })
+        .then(() => {
+          this.$message.success('删除成功')
+          this.tableData.splice(index, 1)
+        })
+        .catch(() => {})
+    },
+    // 多选操作
+    handleSelectionChange (val) {
+      this.multipleSelection = val
+    },
+    delAllSelection () {
+      const length = this.multipleSelection.length
+      let str = ''
+      this.delList = this.delList.concat(this.multipleSelection)
+      for (let i = 0; i < length; i++) {
+        str += this.multipleSelection[i].name + ' '
+      }
+      this.$message.error(`删除了${str}`)
+      this.multipleSelection = []
+    },
+    // 编辑操作
+    handleEdit (index, row) {
+      this.idx = index
+      this.form = row
+      this.editVisible = true
+    },
+    // 保存编辑
+    saveEdit () {
+      this.editVisible = false
+      this.$message.success(`修改第 ${this.idx + 1} 行成功`)
+      this.$set(this.tableData, this.idx, this.form)
+    },
+    // 分页导航
+    handlePageChange (val) {
+      this.$set(this.query, 'pageIndex', val)
+      this.getData()
+    }
+  }
+}
 </script>
 
 <style scoped>
