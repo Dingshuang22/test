@@ -2,13 +2,12 @@ import { axios } from '@/export/index.js'
 
 export const getUserButton = async (userId, menuId) => {
   var buttonList = []
-  return await axios
-    .get('userButton' + 'user/permission', {
-      params: {
-        userId: userId,
-        menuId: menuId
-      }
-    })
+  return await axios.get('userButton' + 'user/permission', {
+    params: {
+      userId: userId,
+      menuId: menuId
+    }
+  })
     .then(res => {
       var data = res.data
       var buttonData = data.data || []
@@ -19,7 +18,7 @@ export const getUserButton = async (userId, menuId) => {
       }
       return buttonList
     })
-    .catch(err => {
-      alert('err')
+    .catch(error => {
+      alert(error)
     })
 }

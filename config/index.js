@@ -10,7 +10,16 @@ module.exports = {
     // Paths
     assetsSubDirectory: 'static',
     assetsPublicPath: '/',
-    proxyTable: {},
+    proxyTable: {
+      '/api': {
+        // target: 'http://marketsys.ikidana.com/',
+        // target: 'http://101.132.47.14:1120/api',
+        // changeOrigin: true,
+        // pathRewrite: {
+        //   '^/api': '/'
+        // }
+      }
+    },
 
     // Various Dev Server settings
     host: 'localhost', // can be overwritten by process.env.HOST

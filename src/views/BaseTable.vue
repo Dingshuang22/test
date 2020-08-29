@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="crumbs">
+        <div class="crumbs" @click="tableToExcel">
             <el-breadcrumb separator="/">
                 <el-breadcrumb-item>
                     <i class="el-icon-lx-cascades"></i>
@@ -116,9 +116,9 @@ export default {
       },
       tableData: [
         {
+          'id': 1,
           'address': '广东省东莞市长安镇',
           'date': '2019-11-1',
-          'id': 1,
           'money': 123,
           'name': '张三',
           'state': '成功',
@@ -288,6 +288,29 @@ export default {
     // console.log(this.tableDataList)
   },
   methods: {
+    // 表格To Excel
+    tableToExcel () {
+      let jsonData = this.tableDataList
+      // 列标题，逗号隔开，每一个逗号就是隔开一个单元格
+      let str = `地址,注册时间,ID,金额,姓名,状态,头像\n`
+      // 增加\t为了不让表格显示科学计数法或者其他格式
+      for (let i = 0; i < jsonData.length; i++) {
+        for (let item in jsonData[i]) {
+          str += `${jsonData[i][item] + '\t'},`
+        }
+        str += '\n'
+      }
+      // encodeURIComponent解决中文乱码
+      let url = 'data:text/csv;charset=utf-8,\ufeff' + encodeURIComponent(str)
+      // 通过创建a标签实现
+      let link = document.createElement('a')
+      link.href = url
+      // 对下载的文件命名
+      link.download = 'channel.csv'
+      document.body.appendChild(link)
+      link.click()
+      document.body.removeChild(link)
+    },
     // 获取 easy-mock 的模拟数据
     getData () {
       fetch('../static/table.json')
@@ -299,8 +322,9 @@ export default {
           // console.log(this.tableData)
           this.pageTotal = res.length
         })
-        .catch(err => {
+        .catch(error => {
           // 解析错误或者获取数据失败
+          console.log(error)
         })
     },
 
